@@ -54,7 +54,7 @@ export function HeroSection() {
         </div>
         <div className="container">
           <div className="banner__thumb">
-            <img src="src\assets\imgs\topimage.png" alt="" />
+            <img src="assets/imgs/topimage.png" alt="" />
           </div>
         </div>
       </div>
