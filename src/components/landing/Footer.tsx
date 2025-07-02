@@ -1,7 +1,8 @@
+import logo from "../../assets/imgs/logo.png"
 
 export function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/10 py-12 px-6 bg-gray-900/20 backdrop-blur-xl">
+    <footer className="relative z-10  bg-[rgb(17,5,43)]">
       <div className="container mx-auto max-w-5xl">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div className="space-y-4">
@@ -14,10 +15,8 @@ export function Footer() {
           </div>
           
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-lg">A</span>
-            </div>
-            <span className="font-bold text-2xl">Alignify</span>
+           
+           <img src={logo} alt="Logo" />
           </div>
         </div>
         

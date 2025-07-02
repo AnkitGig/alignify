@@ -38,7 +38,7 @@ export function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="relative z-10 py-20 px-6">
+    <section id="faq" className="relative z-10 py-20 px-6  bg-[rgb(17,5,43)]">
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Have Questions?</h2>

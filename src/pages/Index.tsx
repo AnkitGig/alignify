@@ -9,12 +9,15 @@ import { WhyChooseSection } from "@/components/landing/WhyChooseSection";
 import { CTASection } from "@/components/landing/CTASection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { Footer } from "@/components/landing/Footer";
+import logo from ".././assets/imgs/logo.png"
+import button from ".././assets/imgs/mdi_beta.png";
+
 
 const Index = () => {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-900 to-pink-900 text-white overflow-hidden">
+    <div className="min-h-screen  text-white overflow-hidden" >
       {/* Enhanced Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-500/20 to-pink-500/15 rounded-full filter blur-3xl"></div>
@@ -23,13 +26,12 @@ const Index = () => {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 border-b border-white/10 backdrop-blur-xl bg-gray-900/20">
+<header className="relative z-10 border-b text-white" style={{ backgroundColor: "#0B0121" }}>
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold">A</span>
-            </div>
-            <span className="font-bold text-xl">Alignify</span>
+            <Link to="/" className="logo d-flex align-items-center me-auto">
+            <img src={logo} alt="Logo" />
+          </Link>
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-gray-300 hover:text-white transition-colors text-sm">Home</Link>
@@ -47,19 +49,28 @@ const Index = () => {
                 </Button>
               </Link>
             ) : (
-              <Link to="/auth">
-                <Button className="bg-white/10 text-white border border-white/20 hover:bg-white/20 backdrop-blur-sm shadow-lg text-sm px-6">
-                  <Users className="w-4 h-4 mr-2" />
-                  Join Beta
-                </Button>
-              </Link>
+             <Link to="/auth">
+              <Button
+                size="lg"
+                className=" hover:from-purple-700 hover:to-pink-700 text-white text-xl px-8 py-4 rounded-full shadow-lg border-0"
+                style={{
+                  background:
+                    "linear-gradient(264deg, rgba(87, 63, 234, 0.2) 0%, rgba(161, 145, 255, 0.2) 100%)",
+                }}
+              >
+                <span>
+                  <img src={button} style={{ width: 24 }} />
+                </span>{" "}
+                Join Beta
+              </Button>
+            </Link>
             )}
           </div>
         </div>
       </header>
 
       <HeroSection />
-      <TrustedBySection />
+      {/* <TrustedBySection /> */}
       <WhyChooseSection />
       <CTASection />
       <FAQSection />
