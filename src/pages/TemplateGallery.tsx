@@ -15,6 +15,7 @@ import { format } from "date-fns";
 import { toast } from "sonner";
 import { ArrowRight, Loader2, LogOut } from "lucide-react";
 import { CanvasElement } from "@/components/CanvasElement";
+import logo from "../assets/imgs/logo.png"; // Adjust the path as necessary
 
 const TemplateGallery = () => {
   const { user, signOut } = useAuth();
@@ -47,15 +48,22 @@ const TemplateGallery = () => {
   };
   
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <header className="bg-white border-b">
+    <div className="min-h-screen flex flex-col" style={{
+    background: 'radial-gradient(circle, rgb(58, 28, 92) 10%, rgb(26, 11, 46) 90%)'
+  }}>
+      <header style={{ backgroundColor: "#0B0121" }}>
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="font-bold text-xl text-blue-600">Alignify</Link>
+          <Link to="/" className="font-bold text-xl text-blue-600">  <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3">
+                     
+                     <img src={logo} alt="Logo" />
+                    </div>
+                    </div></Link>
           <div className="flex items-center gap-4">
-            <Link to="/dashboard" className="text-gray-600 hover:text-gray-900">Dashboard</Link>
+            <Link to="/dashboard" className="text-gray-200 hover:text-gray-200">Dashboard</Link>
             <Button variant="ghost" size="sm" onClick={signOut}>
               <LogOut className="h-4 w-4 mr-2" />
-              Sign Out
+             <span className="text-gray-200">  Sign Out </span>
             </Button>
             <Link to="/editor">
               <Button className="gap-2">
@@ -67,7 +75,7 @@ const TemplateGallery = () => {
       </header>
       
       <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold mb-6">Your Project Templates</h1>
+        <h1 className="text-2xl text-gray-100 font-bold mb-6">Your Project Templates</h1>
         
         {loading ? (
           <div className="flex justify-center items-center py-12">

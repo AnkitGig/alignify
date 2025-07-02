@@ -7,7 +7,7 @@ import { useState } from "react";
 import { SaveTemplateDialog } from "./SaveTemplateDialog";
 import { ExportDialog } from "./export/ExportDialog";
 import { Share } from "lucide-react";
-
+import logo from "../assets/imgs/logo.png"; // Adjust the path as necessary
 interface NavbarProps {
   onSave?: () => void;
 }
@@ -27,9 +27,15 @@ export function Navbar({ onSave }: NavbarProps) {
   };
   
   return (
-    <div className="h-14 border-b flex items-center justify-between px-4" style={{ backgroundColor: 'rgb(155 135 245 / var(--tw-bg-opacity, 1))' }}>
+    <div className="h-14 border-b flex items-center justify-between px-4"style={{ backgroundColor: "#0B0121" }}>
       <div className="flex items-center gap-4">
-        <Link to="/" className="font-bold text-lg text-white">Alignify</Link>
+        <Link to="/" className="font-bold text-lg text-white"> <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3">
+           
+           <img src={logo} alt="Logo" />
+          </div>
+          </div>
+          </Link>
         <div className="h-6 w-px bg-white/30" />
         <Link to="/templates" className="text-sm text-white/80 hover:text-white">Templates</Link>
         {!user && (
