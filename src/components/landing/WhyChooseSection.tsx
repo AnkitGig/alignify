@@ -3,7 +3,7 @@ import { Code, Users, ChartLine } from "lucide-react";
 
 export function WhyChooseSection() {
   return (
-  <section className="relative z-10 py-20 px-6 bg-[rgb(17,5,43)]">
+  <section id="why-choose" className="relative z-10 py-20 px-6 bg-[rgb(17,5,43)]">
 
       <div className="container mx-auto max-w-5xl text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose</h2>

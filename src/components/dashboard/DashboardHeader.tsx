@@ -2,13 +2,21 @@ import { LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
 import { ProfileManager } from '@/components/profile/ProfileManager';
+
 import logo from '../../assets/imgs/logo.png'; // Adjust the path as necessary
+import { useNavigate } from 'react-router-dom';
+
 
 export function DashboardHeader() {
   const { signOut } = useAuth();
+  const navigate = useNavigate();
 
   const handleSignOut = async () => {
     await signOut();
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
   };
 
   return (
@@ -16,10 +24,14 @@ export function DashboardHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-3">
-              <div className="flex items-center gap-3">
-           
-           <img src={logo} alt="Logo" />
-          </div>
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Logo"
+                className="cursor-pointer"
+                onClick={handleLogoClick}
+              />
+            </div>
           </div>
           
           <div className="flex items-center gap-4">

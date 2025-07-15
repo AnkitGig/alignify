@@ -26,17 +26,17 @@ const Index = () => {
       </div>
 
       {/* Header */}
-<header className="relative z-10 border-b text-white" style={{ backgroundColor: "#0B0121" }}>
+      <header className="relative z-10 border-b text-white" style={{ backgroundColor: "#0B0121" }}>
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link to="/" className="logo d-flex align-items-center me-auto">
-            <img src={logo} alt="Logo" />
-          </Link>
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-gray-300 hover:text-white transition-colors text-sm">Home</Link>
-            <Link to="/templates" className="text-gray-300 hover:text-white transition-colors text-sm">Features</Link>
-            <Link to="#faq" className="text-gray-300 hover:text-white transition-colors text-sm">FAQ</Link>
+            <a  href="#why-choose" className="text-gray-300 hover:text-white transition-colors text-sm">Features</a>
+            <a href="#faq" className="text-gray-300 hover:text-white transition-colors text-sm">FAQ</a>
             {!user && (
               <Link to="/auth" className="text-gray-300 hover:text-white transition-colors text-sm">Login</Link>
             )}
@@ -49,21 +49,21 @@ const Index = () => {
                 </Button>
               </Link>
             ) : (
-             <Link to="/auth">
-              <Button
-                size="lg"
-                className=" hover:from-purple-700 hover:to-pink-700 text-white text-xl px-8 py-4 rounded-full shadow-lg border-0"
-                style={{
-                  background:
-                    "linear-gradient(264deg, rgba(87, 63, 234, 0.2) 0%, rgba(161, 145, 255, 0.2) 100%)",
-                }}
-              >
-                <span>
-                  <img src={button} style={{ width: 24 }} />
-                </span>{" "}
-                Join Beta
-              </Button>
-            </Link>
+              <Link to="/auth">
+                <Button
+                  size="lg"
+                  className=" hover:from-purple-700 hover:to-pink-700 text-white text-xl px-8 py-4 rounded-full shadow-lg border-0"
+                  style={{
+                    background:
+                      "linear-gradient(264deg, rgba(87, 63, 234, 0.2) 0%, rgba(161, 145, 255, 0.2) 100%)",
+                  }}
+                >
+                  <span>
+                    <img src={button} style={{ width: 24 }} />
+                  </span>{" "}
+                  Join Beta
+                </Button>
+              </Link>
             )}
           </div>
         </div>
@@ -77,7 +77,7 @@ const Index = () => {
       <Footer />
 
       {/* Scroll to top button */}
-      <button 
+      <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition-all duration-300 z-20 shadow-xl border border-white/20"
       >
