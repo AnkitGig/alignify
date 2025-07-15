@@ -20,7 +20,7 @@ export function ElementsTab() {
     { type: 'column-chart', label: 'Column Chart', category: 'charts' },
     { type: 'bar-chart', label: 'Bar Chart', category: 'charts' },
     { type: 'line-chart', label: 'Line Chart', category: 'charts' },
-    { type: 'area-chart', label: 'Area Chart', category: 'charts' },
+    // { type: 'area-chart', label: 'Area Chart', category: 'charts' },
     { type: 'combo-chart', label: 'Combo Chart', category: 'charts' },
     { type: 'pie-chart', label: 'Pie Chart', category: 'charts' },
     { type: 'histogram', label: 'Histogram', category: 'charts' },
