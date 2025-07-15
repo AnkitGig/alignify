@@ -141,7 +141,7 @@ export function ComboChartRenderer({ properties, onUpdateProperties }: ComboChar
 
   return (
     <div 
-      className="w-full h-full border rounded-lg p-4"
+      className="w-full h-full border rounded-lg p-4 overflow-hidden"
       style={{ backgroundColor: chartBackground }}
     >
       <div className="flex items-center justify-between mb-4">
@@ -235,7 +235,7 @@ export function ComboChartRenderer({ properties, onUpdateProperties }: ComboChar
       
       <div 
         style={{ height: chartHeight, backgroundColor: plotBackground }}
-        className="rounded border"
+        className="rounded border overflow-auto max-h-full"
       >
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart 
@@ -275,7 +275,6 @@ export function ComboChartRenderer({ properties, onUpdateProperties }: ComboChar
                 wrapperStyle={{ fontSize: '12px', color: '#64748b' }}
               />
             )}
-            
             {/* Primary Bar */}
             <Bar 
               dataKey="value" 
@@ -285,7 +284,6 @@ export function ComboChartRenderer({ properties, onUpdateProperties }: ComboChar
               animationDuration={enableAnimation ? animationDuration : 0}
               label={showDataLabels ? renderDataLabel : false}
             />
-            
             {/* Secondary Bar for Multi-Chart */}
             {isMultiChartVariant && (
               <Bar 
@@ -297,7 +295,6 @@ export function ComboChartRenderer({ properties, onUpdateProperties }: ComboChar
                 label={showDataLabels ? renderDataLabel : false}
               />
             )}
-            
             {/* Tertiary Bar for Multi-Chart */}
             {isMultiChartVariant && chartData.some(d => d.tertiary) && (
               <Bar 
@@ -309,7 +306,6 @@ export function ComboChartRenderer({ properties, onUpdateProperties }: ComboChar
                 label={showDataLabels ? renderDataLabel : false}
               />
             )}
-            
             {/* Primary Line */}
             <Line 
               type="monotone" 
