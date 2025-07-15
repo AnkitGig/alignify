@@ -71,7 +71,7 @@ export function PieChartDataSection({ properties, handleChange, dataOpen, setDat
                 
                 <div className="space-y-2">
                   <div>
-                    <Label className="text-xs">Name</Label>
+                    <Label className="text-xs">Category Label</Label>
                     <Input
                       value={item.name}
                       onChange={(e) => updateDataItem(index, 'name', e.target.value)}

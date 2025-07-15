@@ -32,11 +32,14 @@ export function PieChartRenderer({ properties }: PieChartRendererProps) {
 
   const renderCustomLabel = (entry: any) => {
     if (!showLabels) return '';
-    if (showPercentages) {
-      const percent = ((entry.value / chartData.reduce((sum, item) => sum + item.value, 0)) * 100).toFixed(0);
+    const percent = ((entry.value / chartData.reduce((sum, item) => sum + item.value, 0)) * 100).toFixed(0);
+    if (showPercentages && entry.name) {
+      return `${entry.name} (${percent}%)`;
+    } else if (showPercentages) {
       return `${percent}%`;
+    } else {
+      return entry.name;
     }
-    return entry.name;
   };
 
   const renderButtons = () => {
